@@ -37,17 +37,18 @@ services:
     depends_on:
       - db
 
-  jenkins:
-    image: jenkins/jenkins:lts
-    container_name: jenkins
-    privileged: true
-    user: root
-    ports:
-      - "9090:8080"
-      - "50000:50000"
-    volumes:
-      - jenkins_home:/var/jenkins_home
-      - /var/run/docker.sock:/var/run/docker.sock
+jenkins:
+  image: jenkins/jenkins:lts
+  privileged: true
+  user: root
+  ports:
+    - "9090:8080"
+    - "50000:50000"
+  volumes:
+    - jenkins_home:/var/jenkins_home
+    - /var/run/docker.sock:/var/run/docker.sock
+  group_add:
+    - "998"
 
 volumes:
   db_data:
