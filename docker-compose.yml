@@ -38,7 +38,10 @@ services:
       - db
 
   jenkins:
-    image: jenkins/jenkins:lts
+    build:
+      context: .
+      dockerfile: Dockerfile.jenkins
+    container_name: jenkins
     privileged: true
     user: root
     ports:
@@ -47,8 +50,6 @@ services:
     volumes:
       - jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
-    group_add:
-      - "998"
 
 volumes:
   db_data:
