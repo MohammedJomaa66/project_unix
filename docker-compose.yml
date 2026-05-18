@@ -6,7 +6,6 @@ services:
       - "8080:80"
     depends_on:
       - db
- 
 
   db:
     image: mysql:8
@@ -19,7 +18,6 @@ services:
 
   phpmyadmin:
     image: phpmyadmin:latest
-    restart: always
     ports:
       - "8081:80"
     environment:
@@ -29,19 +27,5 @@ services:
     depends_on:
       - db
 
-  # jenkins:
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile.jenkins
-  #   privileged: true
-  #   user: root
-  #   ports:
-  #     - "9090:8080"
-  #     - "50000:50000"
-  #   volumes:
-  #     - jenkins_home:/var/jenkins_home
-  #     - /var/run/docker.sock:/var/run/docker.sock
-
 volumes:
   db_data:
-  jenkins_home:
