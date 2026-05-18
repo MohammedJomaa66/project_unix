@@ -6,8 +6,7 @@ services:
       - "8080:80"
     depends_on:
       - db
-    volumes:
-      - ./site:/var/www/html
+ 
 
   db:
     image: mysql:8

@@ -1,7 +1,7 @@
-
 FROM php:8.2-apache
+
 RUN docker-php-ext-install mysqli
 
+COPY site/ /var/www/html/
 
-COPY ./site/index.php .
-EXPOSE 80
+RUN echo "DirectoryIndex index.php index.html" >> /etc/apache2/apache2.conf
