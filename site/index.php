@@ -1,4 +1,3 @@
-
 <?php
 
 $servername = "db"; 
@@ -10,6 +9,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("DB Connection failed1: " . $conn->connect_error);
 }
+// Note: You might want to remove or comment out the next line in production so it doesn't print on the page!
 echo "DB Connected Successfully";
 
 $word = "";
@@ -42,59 +42,90 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Dictionary</title>
     <style>
         body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
             margin: 0;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
         }
 
         h1 {
-            font-size: 28px;
-            margin: 20px 0;
+            font-size: 32px;
+            color: #2d3748;
+            margin-bottom: 30px;
         }
+
         form {
-            width: 400px;
-            margin: 0 auto 20px;
-            padding: 20px;
-            background: #ffffffff;
-            border: 1px solid #000;
+            max-width: 400px;
+            width: 100%;
+            margin: 0 auto 30px;
+            padding: 30px 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            box-sizing: border-box;
         }
 
         label {
             display: block;
-            font-weight: bold;
-            margin-bottom: 10px;
+            font-weight: 600;
+            margin-bottom: 12px;
             font-size: 18px;
+            color: #4a5568;
         }
 
         input[type="text"] {
-            width: 90%;
-            padding: 10px;
+            width: 100%;
+            padding: 12px;
             margin-bottom: 20px;
-            border: 1px solid #000;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
             font-size: 16px;
+            box-sizing: border-box;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #4299e1;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
         }
 
         button {
-            padding: 10px 20px;
-            background: #ddd;
-            border: 1px solid #000;
+            padding: 12px 24px;
+            background: #4299e1;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
             font-size: 16px;
+            font-weight: 600;
             cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background: #3182ce;
         }
 
         h2 {
-            font-size: 24px;
-            margin: 20px 0 10px;
+            font-size: 20px;
+            color: #2d3748;
+            margin: 10px 0 15px;
         }
 
         p {
-            width: 400px;
+            max-width: 400px;
+            width: 100%;
             margin: 0 auto;
-            padding: 20px;
-            background: #f0f0f0;
-            border: 1px solid #000;
+            padding: 24px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             font-size: 16px;
-            line-height: 1.5;
+            line-height: 1.6;
+            color: #4a5568;
+            box-sizing: border-box;
         }
     </style>
 </head>
