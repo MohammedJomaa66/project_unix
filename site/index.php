@@ -130,7 +130,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </style>
 </head>
 <body>
-    <h1>DictionaryX</h1>
+    <h1>My Dictionary</h1>
     <form method="POST" action="">
         <label for="word">Enter a word:</label>
         <input type="text" id="word" name="word" required>
