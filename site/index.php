@@ -9,8 +9,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("DB Connection failed1: " . $conn->connect_error);
 }
-// Note: You might want to remove or comment out the next line in production so it doesn't print on the page!
-echo "DB Connected Successfully";
+
 
 $word = "";
 $definition = "";
