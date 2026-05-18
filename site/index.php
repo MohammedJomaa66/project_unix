@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             width: 400px;
             margin: 0 auto 20px;
             padding: 20px;
-            background: #f0f0f0;
+            background: #ffffffff;
             border: 1px solid #000;
         }
 
@@ -99,7 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </style>
 </head>
 <body>
-    <h1>Dictionary1</h1>
+    <h1>DictionaryX</h1>
     <form method="POST" action="">
         <label for="word">Enter a word:</label>
         <input type="text" id="word" name="word" required>
