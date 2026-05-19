@@ -129,7 +129,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </style>
 </head>
 <body>
-    <h1> My App</h1>
+    <h1> My Application</h1>
     <form method="POST" action="">
         <label for="word">Enter a word:</label>
         <input type="text" id="word" name="word" required>
