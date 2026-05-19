@@ -18,6 +18,8 @@ RUN docker-php-ext-install mysqli
 # 3. Clone your GitHub repo directly into the web root
 # (We clear the directory first because git clone expects an empty folder)
 RUN rm -rf /var/www/html/* && \
-    git clone https://github.com/MohammedJomaa66/project_unix.git /var/www/html/
+    git clone https://github.com/MohammedJomaa66/project_unix.git /tmp/app && \
+    cp -r /tmp/app/site/* /var/www/html/ && \
+    rm -rf /tmp/app
 
 RUN echo "DirectoryIndex index.php" >> /etc/apache2/apache2.conf
