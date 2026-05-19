@@ -6,3 +6,7 @@ RUN apt-get update && \
     apt-get install -y docker.io docker-compose-plugin
 
 USER jenkins
+
+
+
+#######  docker run -d   --name jenkins   -p 9090:8080   -p 50000:50000   -v jenkins_home:/var/jenkins_home   -v /var/run/docker.sock:/var/run/docker.sock   -v $(which docker):/usr/bin/docker   --restart unless-stopped   --group-add $(getent group docker | cut -d: -f3)   jenkins/jenkins:lts
